@@ -34,5 +34,10 @@ router.get('/:id', (req, res) => {
     .catch(error => console.log(error))
 });
 
+router.get('/:id/comments', (req, res) => {
+    db.findPostComments(req.params.id)
+    .then(r => res.json(r))
+    .catch(error => console.log(error))
+});
 
 module.exports = router; 
