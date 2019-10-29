@@ -28,5 +28,11 @@ router.get('/', (req, res) => {
     .catch(error => console.log(error))
 }); 
 
+router.get('/:id', (req, res) => {
+    db.findById(req.params.id)
+    .then(r => res.json(r))
+    .catch(error => console.log(error))
+});
+
 
 module.exports = router; 
