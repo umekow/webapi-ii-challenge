@@ -4,7 +4,7 @@ const port = 4000;
 const dbRouter = require('./data/db-router'); 
 
 server.use(express.json()); 
-//server.use('')
+server.use('/api/posts', dbRouter)
 
 
 server.listen(port, () => {
