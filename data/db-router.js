@@ -40,4 +40,20 @@ router.get('/:id/comments', (req, res) => {
     .catch(error => console.log(error))
 });
 
+/******************DELETE*******************/
+router.delete('/:id', (req, res) => {
+    db.remove(req.params.id)
+    .then(r => res.json(r))
+    .catch(error => console.log(error))
+});
+
+/******************PUT*******************/
+
+router.put('/:id', (req, res) => {
+    db.update(Number(req.params.id), req.body)
+    .then (r => res.json(r))
+    .catch(error => console.log(error))
+}); 
+
+
 module.exports = router; 
