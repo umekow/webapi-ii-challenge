@@ -50,7 +50,7 @@ router.delete('/:id', (req, res) => {
 /******************PUT*******************/
 
 router.put('/:id', (req, res) => {
-    db.update(Number(req.params.id), req.body)
+    db.update(req.params.id, req.body)
     .then (r => res.json(r))
     .catch(error => console.log(error))
 }); 
